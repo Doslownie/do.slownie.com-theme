@@ -42,4 +42,6 @@
     {{ $title = .Site.Title }}
   {{ end }}
   <title>{{ $title }}</title>
+
+  {{ partial "head_extra.html" . }}
 </head>
