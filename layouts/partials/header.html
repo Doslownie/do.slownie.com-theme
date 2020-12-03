@@ -1,5 +1,12 @@
-<header class="intro-and-nav" role="banner">
-  <div>
+<header class="intro" role="banner">
+  <h1>
+    <span>{{ .Site.Params.header.supertitle }}</span>
+    {{ .Site.Params.header.midtitle1 }}
+    <br />
+    {{ .Site.Params.header.midtitle2 }}
+  </h1>
+  <h2>{{ .Site.Params.header.subtitle }}</h2>
+  <!--<div>
     <div class="intro">
       <a
         class="logo"
@@ -13,5 +20,5 @@
       </p>
     </div>
     {{ partial "nav.html" . }}
-  </div>
+  </div>-->
 </header>

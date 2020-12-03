@@ -1,0 +1,235 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto+Slab:wght@200;400;700;900&display=swap');
+
+:root {
+    --color-accent: #551B0E;
+    --color-bg: #393939;
+    --color-redshadow-inner: #7A341A;
+    --color-redshadow-outer: #6E2713;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+html, body {
+    background: var(--color-bg);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+/*******************************/
+/* wrap long titles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+
+  -ms-word-break: break-all !important;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all !important;
+  /* Instead use this non-standard one: */
+  word-break: break-word !important;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  hyphens: auto !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/*	Typography
+/* -------------------------------------------------------------------------- */
+/*
+Root font size: 10px;
+Base (Paragraph) Font Size: 1.6em
+Scale ratio mobile: 1.2 (default = mobile first ;) )
+Scale ratio desktop: 1.25
+Source: https://archetypeapp.com/#
+*/
+
+html,
+body {
+  font-family: 'Lora', serif;
+  font-size: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  margin-bottom: 3rem;
+}
+
+p,
+.p {
+  font-size: 1.6em;
+  line-height: 3rem;
+  margin-bottom: 3rem;
+}
+
+li {
+  font-size: 1.6em;
+  line-height: 3rem;
+}
+
+h6,
+.h6 {
+  font-size: 1.92em;
+  line-height: 3rem;
+}
+
+h5,
+.h5 {
+  font-size: 2.304em;
+  line-height: 3rem;
+}
+
+h4,
+.h4 {
+  font-size: 2.7648em;
+  line-height: 3rem;
+}
+
+h3,
+.h3 {
+  font-size: 3.31776em;
+  line-height: 6rem;
+}
+
+h2,
+.h2 {
+  font-size: 3.98131em;
+  line-height: 6rem;
+}
+
+h1,
+.h1 {
+  font-size: 4.77757em;
+  line-height: 6rem;
+}
+
+@media (min-width: 768px) {
+  /* Scale ratio desktop: 1.25 */
+  h6,
+  .h6 {
+    font-size: 2em;
+    line-height: 3rem;
+  }
+
+  h5,
+  .h5 {
+    font-size: 2.5em;
+    line-height: 3rem;
+  }
+
+  h4,
+  .h4 {
+    font-size: 3.125em;
+    line-height: 6rem;
+  }
+
+  h3,
+  .h3 {
+    font-size: 3.90625em;
+    line-height: 6rem;
+  }
+
+  h2,
+  .h2 {
+    font-size: 4.88281em;
+    line-height: 6rem;
+  }
+
+  h1,
+  .h1 {
+    font-size: 6.10352em;
+    line-height: 9rem;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 800px;
+    width: fit-content;
+}
+
+header.intro {
+    width: 90%;
+    margin: 0 auto;
+    background: var(--color-redshadow-inner);
+    box-shadow: 0px 0px 6px 4px var(--color-redshadow-inner), 0px 0px 90px 55px var(--color-redshadow-outer);
+    text-align: center;
+    color: white;
+    margin-top: 6rem;
+}
+
+header.intro h1, header.intro h2 {
+    font-weight: 400;
+}
+
+header.intro h1 {
+    display: block;
+    margin-top: -6rem;
+}
+
+header.intro h1 span {
+    display: block;
+    font-size: 16px;
+}
+
+
+/* Skip link */
+[href="#main"] {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    color: #fefefe;
+    background: #000;
+    position: absolute;
+    top: -3rem;
+    text-align: center;
+    z-index: 1;
+}
+[href="#main"]:focus {
+    top: 0;
+    outline: none;
+}
+</style>

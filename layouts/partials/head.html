@@ -12,31 +12,6 @@
     {{ end }}
   {{ end }}
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#ffffff">
-
-  <style>
-    body {
-      visibility: hidden;
-      opacity: 0;
-    }
-  </style>
-
-  <link rel="stylesheet" href="{{ "css/prism.css" | relURL }}" media="none" onload="this.media='all';">
-
-  {{ $templateStyles := resources.Get "css/template-styles.css" }}
-  {{ $styles := $templateStyles | resources.ExecuteAsTemplate "css/styles.css" . }}
-  <link rel="stylesheet" type="text/css" href="{{ $styles.RelPermalink }}">
-
-  {{ range .Site.Params.customCss }}
-    <link rel="stylesheet" href="{{ . | relURL }}">
-  {{ end }}
-
   {{ $title := print .Title " | " .Site.Title }}
   {{ if .IsHome }}
     {{ $title = .Site.Title }}
@@ -44,4 +19,6 @@
   <title>{{ $title }}</title>
 
   {{ partial "head_extra.html" . }}
+
+    {{ partial "style.html" . }}
 </head>
