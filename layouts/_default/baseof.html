@@ -6,12 +6,10 @@
     {{ partial "svg.html" . }}
     <div class="wrapper">
       {{ partial "header.html" . }}
-      <div class="main-and-footer">
-        <div>
+      <div class="page">
           {{ block "main" . }}{{ end }}
-          {{ partial "footer.html" . }}
-        </div>
       </div>
+      {{ partial "footer.html" . }}
     </div>
     {{ partial "katex.html" . }}
     {{ partial "google-analytics-async.html" . }}
