@@ -6,6 +6,7 @@
     --color-bg: #393939;
     --color-redshadow-inner: #7A341A;
     --color-redshadow-outer: #6E2713;
+    --sidebar-width: 180px;
 }
 
 html {
@@ -300,6 +301,18 @@ header.intro h2 {
   background: white url(/oldschoolheader.png) no-repeat top center;
   box-shadow: 0px 0px 15px 10px var(--color-redshadow-inner);  
   padding-top: 6rem;
+  display: flex;
+}
+
+.page > main {
+  flex: calc(100% - var(--sidebar-width));
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+.page > aside {
+  flex: var(--sidebar-width);
+  padding-left: 1rem;
+  padding-right: 0.5rem;
 }
 
 /* Skip link */

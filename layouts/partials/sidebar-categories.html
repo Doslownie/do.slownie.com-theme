@@ -1,0 +1,13 @@
+<section>
+        {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
+        {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
+        <h4><a href="{{ .Permalink }}">{{ $taxonomy_term }}</a></h4>
+            <ul>
+                {{ range $key, $value := $taxonomy }}
+                {{ $taxonomyPage := $.Site.GetPage (printf "/%s/%s" $taxonomy_term $key) }}
+                <li><a href="{{ $taxonomyPage.Permalink }}">{{ $key }}</a></li>
+                {{ end }}
+            </ul>
+        {{ end }}
+        {{ end }}
+</section>
