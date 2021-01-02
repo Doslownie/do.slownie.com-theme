@@ -2,6 +2,7 @@
 <html lang="{{ .Site.Language.Lang }}">
   {{ partial "head.html" . }}
   <body>
+    {{ partial "nav.html" . }}
     {{ partial "header.html" . }}
     <div class="page">
         {{ block "main" . }}{{ end }}
