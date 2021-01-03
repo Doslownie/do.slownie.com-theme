@@ -1,3 +1,37 @@
 <header class="header-banner" role="banner">
-  <img src="{{ .Site.Params.logoUrl }}" alt="{{ .Site.Params.logoAlt }}" />
+  <a href="{{ .Site.Params.logoHref }}">
+    <h1>
+      <img src="{{ .Site.Params.logoUrl }}" alt="{{ .Site.Params.logoAlt }}" />
+    </h1>
+  </a>
 </header>
+
+<style>
+  .header-banner {
+    max-width: 510px;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+
+  .header-banner h1, .header-banner a {
+    display: block;
+    margin: 0;
+    padding: 0
+  }
+
+  .header-banner img {
+    transform: rotate(0deg);
+    animation-name: logospin;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(.41,0,1,.67);
+  }
+
+  @keyframes logospin { 
+        from { 
+            transform: rotate(-3deg); 
+        } to { 
+            transform: rotate(0deg); 
+        }
+    }
+</style>
