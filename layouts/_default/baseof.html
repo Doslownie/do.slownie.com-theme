@@ -4,9 +4,7 @@
   <body>
     {{ partial "nav.html" . }}
     {{ partial "header.html" . }}
-    <div class="page">
-        {{ block "main" . }}{{ end }}
-    </div>
+    {{ block "main" . }}{{ end }}
     {{ partial "footer.html" . }}
     {{ partial "google-analytics-async.html" . }}
   </body>

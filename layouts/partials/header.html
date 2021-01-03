@@ -1,8 +1,6 @@
 <header class="header-banner" role="banner">
   <a href="{{ .Site.Params.logoHref }}">
-    <h1>
-      <img src="{{ .Site.Params.logoUrl }}" alt="{{ .Site.Params.logoAlt }}" />
-    </h1>
+    <h1><img src="{{ .Site.Params.logoUrl }}" alt="{{ .Site.Params.logoAlt }}" /></h1>
   </a>
 </header>
 
@@ -16,7 +14,8 @@
   .header-banner h1, .header-banner a {
     display: block;
     margin: 0;
-    padding: 0
+    padding: 0;
+    line-height: 0;
   }
 
   .header-banner img {
