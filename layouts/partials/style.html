@@ -2,14 +2,16 @@
 /* Fonts */
 @font-face {
     font-family: 'Jaapokki';
-    src: url('{{ "fonts/jaapokki-regular.woff" | absURL }}') format('woff');
+    /* {{ $font := resources.Get "fonts/jaapokki-regular.woff" }} */
+    src: url('{{ $font.Permalink }}') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Sacramento';
-    src: url('{{ "fonts/sacramento-regular.ttf" | absURL }}') format('ttf');
+    /* {{ $font := resources.Get "fonts/sacramento-regular.ttf" }} */
+    src: url('{{ $font.Permalink }}') format('ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -31,7 +33,7 @@ html, .root {
 }
 
 body, .article {
-  font-family: sans-serif;
+  font-family: 'Jaapokki', sans-serif;
   font-size: 1rem;
   line-height: 1.7666667rem;
   max-width: 560px;
@@ -103,6 +105,7 @@ body {
   margin: 0 auto;
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-top: 0.5rem;
 }
 
 
@@ -118,10 +121,12 @@ body {
   align-items: stretch;
 }
 
+/*
 .top-nav ul::after {
-content: '';
-flex: auto;
+  content: '';
+  flex: auto;
 }
+*/
 
 .top-nav ul li {
   display: block;
@@ -142,5 +147,15 @@ flex: auto;
 
 .top-nav ul li a:hover {
   text-decoration: underline;
+}
+
+.header-banner {
+  max-width: 510px;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.header-banner img {
+  
 }
 </style>
