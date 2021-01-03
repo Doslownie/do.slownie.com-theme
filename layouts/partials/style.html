@@ -11,7 +11,7 @@
 @font-face {
     font-family: 'Sacramento';
     /* {{ $font := resources.Get "fonts/sacramento-regular.ttf" }} */
-    src: url('{{ $font.Permalink }}') format('ttf');
+    src: url('{{ $font.Permalink }}') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -39,6 +39,9 @@ body, .article {
   max-width: 560px;
   margin: auto;
   color: var(--color-text);
+}
+h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5 {
+  font-weight: normal;
 }
 h1, .h1 {
   font-size: 3.3666667rem;
@@ -98,6 +101,10 @@ sub {
   bottom: -0.25em;
 }
 
+main {
+  text-align: center;
+}
+
 
 /* Layout */
 body {
@@ -106,5 +113,20 @@ body {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 0.5rem;
+}
+
+/* Utils */
+.text-doslownie {
+  font-family: 'Sacramento', serif;
+  font-weight: normal;
+  color: var(--color-accent);
+}
+
+.text-pink {
+  color: var(--color-accent);
+}
+
+.text-dots {
+  color: var(--color-accent);
 }
 </style>
