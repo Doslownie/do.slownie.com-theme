@@ -1,12 +1,36 @@
 <footer role="contentinfo">
-  <div>
-    <label for="themer">
-      {{ T "dark_theme" }} <input type="checkbox" id="themer" class="vh">
-      <!-- Shows "on" or "off" -->
-      <span aria-hidden="true"></span>
-    </label>
+  <div class="footer-up">
+    {{ partial "footer_up.html" . }}
   </div>
-  {{ with .Site.Params.footer }}
-    {{ . | markdownify }}
-  {{ end }}
+  <div class="footer-bottom">
+    <div>
+      {{ partial "footer_bottom.html" . }}
+    </div>
+  </div>
 </footer>
+<style>
+  footer {
+    text-align: center;
+    width: 100%;
+  }
+
+  footer .footer-bottom {
+    background: var(--color-accent);
+    color: white;
+  }
+
+  footer .footer-bottom > div {
+    display: block;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  footer .footer-bottom > div > *:last-of-type {
+    margin-bottom: 0;
+  }
+
+  footer .footer-bottom a {
+    color: white;
+  }
+</style>

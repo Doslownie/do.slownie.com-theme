@@ -2,9 +2,11 @@
 <html lang="{{ .Site.Language.Lang }}">
   {{ partial "head.html" . }}
   <body>
+    <div class="page">
     {{ partial "nav.html" . }}
     {{ partial "header.html" . }}
     {{ block "main" . }}{{ end }}
+    </div>
     {{ partial "footer.html" . }}
     {{ partial "google-analytics-async.html" . }}
   </body>
