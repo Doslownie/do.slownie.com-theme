@@ -11,7 +11,7 @@
     margin-top: 1rem;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: {{ .Site.Params.mobileBreakpointPx }}px) {
     .header-banner {
       max-width: 510px;
     }

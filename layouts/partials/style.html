@@ -119,7 +119,7 @@ sub {
 
 /* Tablet & desktop typography */
 /* Gridlover: font=30px,line=1.75,scale=1.5 */
-@media (min-width: 768px) {
+@media (min-width: {{ .Site.Params.mobileBreakpointPx }}px) {
   html, .root {
     font-size: 30px;
     line-height: 53px;
@@ -240,5 +240,23 @@ body {
 
 .text-dots {
   color: var(--color-accent);
+}
+
+.mobile-hide {
+  display: none;
+}
+
+.mobile-show {
+  display: initial;
+}
+
+@media(min-width: {{ .Site.Params.mobileBreakpointPx }}px) {
+  .mobile-hide {
+    display: initial;
+  }
+
+  .mobile-show {
+    display: none;
+  }
 }
 </style>
