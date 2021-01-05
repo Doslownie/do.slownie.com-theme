@@ -27,60 +27,77 @@ html {
 
 
 /* Typography */
-html, .root {
-  font-size: 30px;
-  line-height: 53px;
-}
-
 body, .article {
   font-family: 'Jaapokki', sans-serif;
-  font-size: 1rem;
-  line-height: 1.7666667rem;
+  letter-spacing: 1px;
   color: var(--color-text);
 }
-
 h1,h2,h3,h4,h5,.h1,.h2,.h3,.h4,.h5 {
   font-weight: normal;
 }
+
+main {
+  text-align: center;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+
+/* Mobile typography */
+/* Gridlover: font=14px,line=2,scale=1.333 */
+html, .root {
+  font-size: 14px;
+  line-height: 35px;
+}
+body, .article {
+  font-size: 1rem;
+  line-height: 2.5rem;
+}
 h1, .h1 {
-  font-size: 3.3666667rem;
-  line-height: 3.5333333rem;
-  margin-top: 1.7666667rem;
-  margin-bottom: 3.5333334rem;
+  font-size: 2.3571429rem;
+  line-height: 2.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 5rem;
 }
 h2, .h2 {
-  font-size: 2.2666667rem;
-  line-height: 3.5333333rem;
-  margin-top: 1.7666667rem;
-  margin-bottom: 1.7666667rem;
+  font-size: 1.7857143rem;
+  line-height: 2.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 h3, .h3 {
-  font-size: 1.5rem;
-  line-height: 3.5333333rem; /* of h2 */
-  margin-top: 1.7666667rem; /* of h2 */
-  margin-bottom: 1.7666667rem; /* of h2 */
+  font-size: 1.3571429rem;
+  line-height: 2.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0rem;
 }
 h4, .h4 {
   font-size: 1rem;
-  line-height: 1.7666667rem;
-  margin-top: 1.7666667rem;
+  line-height: 2.5rem;
+  margin-top: 2.5rem;
   margin-bottom: 0rem;
 }
 h5, .h5 {
   font-size: 1rem;
-  line-height: 1.7666667rem;
-  margin-top: 1.7666667rem;
+  line-height: 2.5rem;
+  margin-top: 2.5rem;
   margin-bottom: 0rem;
 }
 p, ul, ol, pre, table, blockquote {
   margin-top: 0rem;
-  margin-bottom: 1.7666667rem;
+  margin-bottom: 2.5rem;
 }
 ul ul, ol ol, ul ol, ol ul {
   margin-top: 0rem;
   margin-bottom: 0rem;
 }
 
+/* Let's make sure all's aligned */
 hr, .hr {
   border: 1px solid;
   margin: -1px 0;
@@ -100,16 +117,76 @@ sub {
   bottom: -0.25em;
 }
 
-main {
-  text-align: center;
-}
+/* Tablet & desktop typography */
+/* Gridlover: font=30px,line=1.75,scale=1.5 */
+@media (min-width: 768px) {
+  html, .root {
+    font-size: 30px;
+    line-height: 53px;
+  }
 
-a {
-  color: var(--color-accent);
-  text-decoration: underline;
-}
-a:hover {
-  text-decoration: none;
+  body, .article {
+    font-size: 1rem;
+    line-height: 1.7666667rem;
+  }
+
+  h1, .h1 {
+    font-size: 3.3666667rem;
+    line-height: 3.5333333rem;
+    margin-top: 1.7666667rem;
+    margin-bottom: 3.5333334rem;
+  }
+  h2, .h2 {
+    font-size: 2.2666667rem;
+    line-height: 3.5333333rem;
+    margin-top: 1.7666667rem;
+    margin-bottom: 1.7666667rem;
+  }
+  h3, .h3 {
+    font-size: 1.5rem;
+    line-height: 3.5333333rem; /* of h2 */
+    margin-top: 1.7666667rem; /* of h2 */
+    margin-bottom: 1.7666667rem; /* of h2 */
+  }
+  h4, .h4 {
+    font-size: 1rem;
+    line-height: 1.7666667rem;
+    margin-top: 1.7666667rem;
+    margin-bottom: 0rem;
+  }
+  h5, .h5 {
+    font-size: 1rem;
+    line-height: 1.7666667rem;
+    margin-top: 1.7666667rem;
+    margin-bottom: 0rem;
+  }
+  p, ul, ol, pre, table, blockquote {
+    margin-top: 0rem;
+    margin-bottom: 1.7666667rem;
+  }
+  ul ul, ol ol, ul ol, ol ul {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+  hr, .hr {
+    border: 1px solid;
+    margin: -1px 0;
+  }
+  a, b, i, strong, em, small, code {
+    line-height: 0;
+  }
+  sub, sup {
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sup {
+    top: -0.5em;
+  }
+  sub {
+    bottom: -0.25em;
+  }
 }
 
 
