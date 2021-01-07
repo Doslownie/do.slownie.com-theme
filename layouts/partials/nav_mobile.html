@@ -8,6 +8,22 @@
                 <span class="hamburger__bars"></span>
             </span>
         </button>
+        <nav class="nav-box mobile-show" role="navigation">
+            {{ $current := . }}
+            <ul id="patterns-list">
+                {{ range .Site.Menus.nav }}
+                <li class="pattern">
+                    {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
+                    {{ $active = or $active (eq .Name $current.Title) }}
+                    {{ $active = or $active (and (eq .Name "Blog") (eq $current.Section "post")) }}
+                    {{ $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) }}
+                    <a href="{{ .URL }}" {{ if $active }}aria-current="page" {{ end }}>
+                        <span class="text">{{ .Name }}</span>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </nav>
     </div>
 </div>
 <style>
@@ -78,6 +94,21 @@
 	 outline: none;
 }
  
+.nav-mobile-nav .nav-box {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 40%;
+    background: rgba(10, 10, 200, 0.8);
+    backdrop-filter: blur(4px);
+    color: white;
+}
+
+.nav-mobile-nav .nav-box a {
+    color: white;
+}
 </style>
 <script type="text/javascript">
     const menu = document.querySelector('.nav-mobile-nav .hamburger');
