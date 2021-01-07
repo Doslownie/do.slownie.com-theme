@@ -96,7 +96,6 @@
 }
  
 .nav-mobile-nav .nav-box {
-    display: none;
     z-index: 2;
     position: fixed;
     top: 0;
@@ -106,11 +105,19 @@
     background: var(--color-menu-bg);
     backdrop-filter: blur(8px);
     color: white;
-    box-shadow: 2px 0 25px 5px rgba(0, 0, 0, 0.5)
+    box-shadow: 2px 0 25px 5px rgba(0, 0, 0, 0.5);
+
+    transition: -webkit-transform .3s ease;
+    transition: transform .3s ease;
+    -webkit-transform: translateX(-130%);
+    -ms-transform: translateX(-130%);
+    transform: translateX(-130%);
 }
 
 .nav-mobile-nav .nav-box.open {
-    display: block;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
 }
 
 .nav-mobile-nav .menu-close-overlay {
