@@ -1,0 +1,56 @@
+<nav id="top-nav" class="top-nav mobile-hide" role="navigation">
+    {{ $current := . }}
+    <ul id="patterns-list">
+        {{ range .Site.Menus.nav }}
+        <li class="pattern">
+            {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
+            {{ $active = or $active (eq .Name $current.Title) }}
+            {{ $active = or $active (and (eq .Name "Blog") (eq $current.Section "post")) }}
+            {{ $active = or $active (and (eq .Name "Tags") (eq $current.Section "tags")) }}
+            <a href="{{ .URL }}" {{ if $active }}aria-current="page" {{ end }}>
+                <span class="text">{{ .Name }}</span>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</nav>
+<style>
+    .top-nav ul {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    /*
+  .top-nav ul::after {
+    content: '';
+    flex: auto;
+  }
+  */
+
+    .top-nav ul li {
+        display: block;
+        padding: 0;
+        margin: 0;
+    }
+
+    .top-nav ul li a {
+        color: var(--color-accent);
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 900;
+    }
+
+    .top-nav ul li a:nth-of-type(n+1) {
+        padding-left: 1rem;
+    }
+
+    .top-nav ul li a:hover {
+        text-decoration: underline;
+    }
+</style>
