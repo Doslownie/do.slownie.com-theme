@@ -27,16 +27,22 @@
   .header-banner img {
     transform: rotate(0deg);
     animation-name: logospin;
-    animation-duration: 0.2s;
+    animation-duration: 0.3s;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(.41,0,1,.67);
   }
 
+  .header-banner img:hover {
+    animation: emptyanim;
+  }
+
   @keyframes logospin { 
-        from { 
-            transform: rotate(-3deg); 
-        } to { 
-            transform: rotate(0deg); 
-        }
-    }
+      from { 
+          transform: rotate(-3deg); 
+      } to { 
+          transform: rotate(0deg); 
+      }
+  }
+
+  @keyframes emptyanim {}
 </style>
