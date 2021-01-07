@@ -1,4 +1,4 @@
-<div class="nav-mobile mobile-show">
+<div class="nav-mobile">
     <div class="nav-mobile-header">
         {{ partial "nav_mobile_header.html" . }}
     </div>
@@ -27,13 +27,28 @@
         <div class="menu-close-overlay"></div>
     </div>
 </div>
+<div class="nav-mobile-sticky-spacer"></div>
+
 <style>
 /* Source: https://blog.robertorlinski.pl/2018/09/25/hamburger-menu/ */
 .nav-mobile {
+    z-index: 2;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
+    align-items: center;
+    background: white;
+}
+
+@media(min-width: {{ .Site.Params.mobileBreakpointPx }}px) {
+  .nav-mobile {
+    display: none;
+  }
+}
+
+.nav-mobile-nav {
+    display: flex;
     align-items: center;
 }
 
@@ -96,7 +111,7 @@
 }
  
 .nav-mobile-nav .nav-box {
-    z-index: 2;
+    z-index: 3;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -122,7 +137,7 @@
 
 .nav-mobile-nav .menu-close-overlay {
     display: none;
-    z-index: 2;
+    z-index: 3;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -152,11 +167,27 @@
     text-shadow: 3px 2px rgba(0,0,0,0.4);
     text-transform: uppercase;
 }
+
+.nav-mobile.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 2rem;
+  box-shadow: 0 0px 7px 5px rgba(0,0,0,0.2);
+}
+
+.nav-mobile.sticky + .nav-mobile-sticky-spacer {
+    display: block;
+}
 </style>
 <script type="text/javascript">
+document.addEventListener('DOMContentLoaded', (event) => {
     const menu = document.querySelector('.nav-mobile-nav .hamburger');
-    const navBox = document.querySelector('.nav-mobile-nav .nav-box')
-    const closeOverlay = document.querySelector('.nav-mobile-nav .menu-close-overlay')
+    const navBox = document.querySelector('.nav-mobile-nav .nav-box');
+    const closeOverlay = document.querySelector('.nav-mobile-nav .menu-close-overlay');
+    const navMobile = document.querySelector('.nav-mobile');
+    const navMobileStickySpacer = document.querySelector('.nav-mobile-sticky-spacer');
 
     menu.addEventListener('click', () => {
         menu.classList.toggle('hamburger--active');
@@ -169,4 +200,28 @@
         navBox.classList.toggle('open');
         closeOverlay.classList.toggle('open');
     });
+
+    window.onscroll = function () { handleStickyNav() };
+    const stickyOffset = navMobile.offsetTop;
+    const stickyHeight = navMobile.offsetHeight;
+
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function handleStickyNav() {
+        if (window.pageYOffset > stickyOffset) {
+            stickyNavOn();
+        } else {
+            stickyNavOff();
+        }
+    }
+
+    function stickyNavOn() {
+        navMobile.classList.add('sticky');
+        navMobileStickySpacer.style.height = stickyHeight + 'px';
+    }
+
+    function stickyNavOff() {
+        navMobile.classList.remove('sticky');
+        navMobileStickySpacer.style.height = '0px';
+    }
+});
 </script>
